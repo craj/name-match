@@ -25,8 +25,8 @@ npm install name-match
 const { match, isMatch } = require('name-match');
 
 // Get similarity score (0-1)
-const score = match('John W. Smith', 'Smith, John');
-console.log(score); // 0.85
+const score = match('John Smith', 'Smith, John');
+console.log(score); // 0.87
 
 // Check if names match (using default threshold of 0.75)
 const matched = isMatch('Robert Johnson', 'Bob Johnson');
@@ -45,7 +45,7 @@ const matcher = new EnhancedNaturalMatcher({ threshold: 0.75 });
 
 // Calculate similarity score
 const score = matcher.getSimilarity('William Jones', 'Bill Jones');
-console.log(score); // 0.89
+console.log(score); // 0.78
 
 // Check if names match using custom threshold
 const matched = matcher.isMatch('Michael Smith', 'Mike Smith');
@@ -61,11 +61,11 @@ const { matchGroup } = require('name-match');
 const nameGroup = [
   'Aaron Charles Donovan',
   'Aaron Donovan',
-  'Donovan, Aaron C.'
+  'Donovan Aaron C'
 ];
 
 const result = matchGroup(nameGroup);
-console.log(result.score); // 0.83
+console.log(result.score); // 0.76
 console.log(result.isMatch); // true
 console.log(result.matches); // Detailed match information for each pair
 ```
@@ -76,18 +76,18 @@ console.log(result.matches); // Detailed match information for each pair
 const { NameNormalizer } = require('name-match');
 
 // Parse a name into components
-const parsed = NameNormalizer.parseName('Smith, John William Jr.');
+const parsed = NameNormalizer.parseName('Dr. John William Smith Jr.');
 console.log(parsed);
 /*
 {
-  original: 'Smith, John William Jr.',
-  cleaned: 'smith john william jr',
-  normalized: 'john william smith',
-  prefixes: [],
+  original: 'Dr. John William Smith Jr.',
+  cleaned: 'dr john william smith jr',
+  normalized: 'dr john william smith jr',
+  prefixes: [ 'dr' ],
   firstName: 'john',
-  middleNames: ['william'],
+  middleNames: [ 'william' ],
   lastName: 'smith',
-  suffixes: ['jr'],
+  suffixes: [ 'jr' ],
   initials: { first: 'j', middle: 'w', last: 's' }
 }
 */

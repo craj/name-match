@@ -1,6 +1,6 @@
 {
   "name": "name-match",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A robust name matching library combining multiple algorithms for optimal performance",
   "main": "index.js",
   "scripts": {
@@ -34,7 +34,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/craj/name-match.git"
+    "url": "git+https://github.com/craj/name-match.git"
   },
   "engines": {
     "node": ">=12.0.0"

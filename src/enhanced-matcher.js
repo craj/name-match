@@ -128,7 +128,7 @@ class EnhancedMatcher {
       if (name1.firstName.charAt(0) === name2.firstName.charAt(0)) {
         // Last initial matches last name
         if (name1.lastName.charAt(0) === name2.lastName.charAt(0)) {
-          return 0.7;
+          return 0.75;
         }
         return 0.4;
       }
@@ -207,7 +207,7 @@ class EnhancedMatcher {
     }
 
     // Average similarity across all pairs
-    const averageScore = totalScore / pairCount;
+    const averageScore = parseFloat((totalScore / pairCount).toFixed(2));
 
     return {
       score: averageScore,

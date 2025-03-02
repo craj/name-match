@@ -21,9 +21,9 @@ const testPairs = [
   ['Michael Jackson', 'Michael Jackson Jr'],
   ['James Chaney', 'Jim Chaney'],
   ['Jessica Elizondo', 'Jessica William Elizondo'],
-  ['Ander Herrera', 'HERRERA Ander'],
+  ['Ander Herrera', 'Herrera Ander'],
   ['Chelsea M Solomon', 'Chelsea Mary-Elizabeth Solomon'],
-  ['John Smith', 'Jane Smith'], // Should not match
+  ['John Smith', 'James Smith'], // Should not match
   ['Robert Johnson', 'Robert Williams'] // Should not match
 ];
 
@@ -63,9 +63,9 @@ console.log('\nName normalization:');
 const nameExamples = [
   'Smith, John William Jr.',
   'Dr. Robert J. Johnson III',
-  'MICHAEL ANTHONY DAVIS',
+  'Michael Patrick Davis',
   'Mary-Elizabeth Smith (Parker)',
-  'O\'Connor, James Patrick'
+  'O\'Connor, James Richard'
 ];
 
 nameExamples.forEach(name => {

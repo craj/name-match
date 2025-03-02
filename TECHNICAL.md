@@ -97,7 +97,7 @@ Specifically handles cases where one version uses initials:
 function initialsMatchScore(name1, name2) {
   if (name1.firstName.charAt(0) === name2.firstName.charAt(0) &&
       name1.lastName.charAt(0) === name2.lastName.charAt(0)) {
-    return 0.7;
+    return 0.75;
   }
   
   return 0;

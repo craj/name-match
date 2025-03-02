@@ -40,7 +40,7 @@ class EnhancedNaturalMatcher {
     // Calculate average of the two scores
     const averageScore = (naturalScore + enhancedScore) / 2;
     
-    return averageScore;
+    return parseFloat(averageScore.toFixed(2));
   }
 
   /**
@@ -104,7 +104,7 @@ class EnhancedNaturalMatcher {
     }
 
     // Average similarity across all pairs
-    const averageScore = totalScore / pairCount;
+    const averageScore = parseFloat((totalScore / pairCount).toFixed(2));
     const isMatch = averageScore >= this.threshold;
 
     return {
