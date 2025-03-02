@@ -77,19 +77,22 @@ function cleanName(name) {
  */
 function parseName(name) {
   if (!name) return { original: '', parts: [] };
-  
-  // Clean the name
-  const cleanedName = cleanName(name);
-  
+    
   // Check for comma format (last, first)
-  let normalized = cleanedName;
-  if (cleanedName.includes(',')) {
-    const parts = cleanedName.split(',').map(p => p.trim());
+  let normalized = name;
+  if (name.includes(',')) {
+    const parts = name.split(',').map(p => p.trim());
     if (parts.length >= 2) {
       normalized = `${parts[1]} ${parts[0]}`;
     }
   }
   
+  // Normalized and clean name
+  const cleanedName = cleanName(normalized);
+  if(cleanedName !== normalized) {
+    normalized = cleanedName;
+  }
+
   // Split into parts
   const allParts = normalized.split(' ');
   

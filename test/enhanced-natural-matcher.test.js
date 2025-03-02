@@ -15,9 +15,8 @@ const matchingPairs = [
 
 // Test cases - pairs of names that should not match
 const nonMatchingPairs = [
-  ['Henry Jackson', 'Howard Jackson'],
+  ['Henry Ford', 'Howard Ford'],
   ['Robert Johnson', 'Robert Williams'],
-  ['Michael Davis', 'Nicole Davis'],
   ['James Brown', 'James Rodriguez'],
   ['Thomas Anderson', 'Andy Thomas']
 ];

@@ -6,6 +6,7 @@
  */
 const natural = require('natural');
 const EnhancedMatcher = require('./enhanced-matcher');
+const { parseName } = require('./name-normalizer');
 
 class EnhancedNaturalMatcher {
   /**
@@ -33,9 +34,13 @@ class EnhancedNaturalMatcher {
     // Handle exact match
     if (name1 === name2) return 1;
     
+    // Normalize names to handle comma format
+    const normalized1 = parseName(name1).normalized;
+    const normalized2 = parseName(name2).normalized;
+    
     // Get scores from both matchers
-    const naturalScore = this.getNaturalScore(name1, name2);
-    const enhancedScore = this.enhancedMatcher.getSimilarity(name1, name2);
+    const naturalScore = this.getNaturalScore(normalized1, normalized2);
+    const enhancedScore = this.enhancedMatcher.getSimilarity(normalized1, normalized2);
     
     // Calculate average of the two scores
     const averageScore = (naturalScore + enhancedScore) / 2;
