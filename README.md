@@ -2,7 +2,7 @@
 
 A robust name matching library for Node.js that combines multiple string similarity algorithms for optimal name matching performance.
 
-[![npm version](https://img.shields.io/npm/v/enhanced-name-matcher.svg)](https://www.npmjs.com/package/enhanced-name-matcher)
+[![npm version](https://img.shields.io/npm/v/name-match.svg)](https://www.npmjs.com/package/name-match)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
@@ -16,13 +16,13 @@ A robust name matching library for Node.js that combines multiple string similar
 ## Installation
 
 ```bash
-npm install enhanced-name-matcher
+npm install name-match
 ```
 
 ## Quick Start
 
 ```javascript
-const { match, isMatch } = require('enhanced-name-matcher');
+const { match, isMatch } = require('name-match');
 
 // Get similarity score (0-1)
 const score = match('John W. Smith', 'Smith, John');
@@ -38,7 +38,7 @@ console.log(matched); // true
 ### Creating a Matcher Instance
 
 ```javascript
-const { EnhancedNaturalMatcher } = require('enhanced-name-matcher');
+const { EnhancedNaturalMatcher } = require('name-match');
 
 // Create matcher with custom threshold
 const matcher = new EnhancedNaturalMatcher({ threshold: 0.75 });
@@ -55,7 +55,7 @@ console.log(matched); // true
 ### Matching Groups of Names
 
 ```javascript
-const { matchGroup } = require('enhanced-name-matcher');
+const { matchGroup } = require('name-match');
 
 // Check if all names in a group refer to the same person
 const nameGroup = [
@@ -73,7 +73,7 @@ console.log(result.matches); // Detailed match information for each pair
 ### Name Normalization
 
 ```javascript
-const { NameNormalizer } = require('enhanced-name-matcher');
+const { NameNormalizer } = require('name-match');
 
 // Parse a name into components
 const parsed = NameNormalizer.parseName('Smith, John William Jr.');

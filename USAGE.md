@@ -5,13 +5,13 @@ This guide provides detailed examples on how to use the Enhanced Name Matcher li
 ## Installation
 
 ```bash
-npm install enhanced-name-matcher
+npm install name-match
 ```
 
 ## Basic Usage
 
 ```javascript
-const { match, isMatch } = require('enhanced-name-matcher');
+const { match, isMatch } = require('name-match');
 
 // Get the similarity score between two names (0-1)
 const score = match('John W. Smith', 'Smith, John');
@@ -30,7 +30,7 @@ if (isMatch('Robert Johnson', 'Bob Johnson')) {
 ### Creating a Custom Matcher
 
 ```javascript
-const { EnhancedNaturalMatcher } = require('enhanced-name-matcher');
+const { EnhancedNaturalMatcher } = require('name-match');
 
 // Create a matcher with custom threshold
 const strictMatcher = new EnhancedNaturalMatcher({ threshold: 0.85 });
@@ -48,7 +48,7 @@ console.log(lenientMatcher.isMatch('Michael Scott', 'Mike Scott')); // true
 ### Group Matching
 
 ```javascript
-const { matchGroup } = require('enhanced-name-matcher');
+const { matchGroup } = require('name-match');
 
 // Check if all names in a group refer to the same person
 const nameGroup = [
@@ -87,7 +87,7 @@ console.log(result.matches);
 ### Name Normalization and Parsing
 
 ```javascript
-const { NameNormalizer } = require('enhanced-name-matcher');
+const { NameNormalizer } = require('name-match');
 
 // Parse a name into components
 const parsed = NameNormalizer.parseName('Smith, John William Jr.');
@@ -129,7 +129,7 @@ console.log(normalized); // 'john smith'
 ### Identity Verification
 
 ```javascript
-const { isMatch } = require('enhanced-name-matcher');
+const { isMatch } = require('name-match');
 
 function verifyIdentity(storedName, inputName) {
   return isMatch(storedName, inputName, { threshold: 0.8 });
@@ -143,7 +143,7 @@ console.log(`Identity verification: ${verified ? 'PASSED' : 'FAILED'}`);
 ### Deduplication
 
 ```javascript
-const { matchGroup } = require('enhanced-name-matcher');
+const { matchGroup } = require('name-match');
 
 function findDuplicates(names) {
   const result = matchGroup(names);
@@ -172,7 +172,7 @@ console.log(dupCheck);
 ### Database Matching
 
 ```javascript
-const { EnhancedNaturalMatcher } = require('enhanced-name-matcher');
+const { EnhancedNaturalMatcher } = require('name-match');
 
 // Create a matcher with custom settings
 const matcher = new EnhancedNaturalMatcher({ threshold: 0.75 });
@@ -201,7 +201,7 @@ async function findMatchingRecords(db, searchName) {
 ### Audit and Compliance
 
 ```javascript
-const { match, NameNormalizer } = require('enhanced-name-matcher');
+const { match, NameNormalizer } = require('name-match');
 
 function auditNameChange(oldName, newName) {
   const score = match(oldName, newName);
@@ -232,7 +232,7 @@ console.log(audit);
 For applications that repeatedly compare the same names, consider implementing a cache:
 
 ```javascript
-const { match } = require('enhanced-name-matcher');
+const { match } = require('name-match');
 
 // Simple cache implementation
 class NameMatchCache {
@@ -269,7 +269,7 @@ const score2 = cache.getMatch('Smith, John', 'John Smith'); // Retrieved from ca
 For large sets of names, use batch processing to improve performance:
 
 ```javascript
-const { EnhancedNaturalMatcher } = require('enhanced-name-matcher');
+const { EnhancedNaturalMatcher } = require('name-match');
 
 function batchProcessNames(referenceNames, comparisonNames, batchSize = 100) {
   const matcher = new EnhancedNaturalMatcher();
@@ -303,7 +303,7 @@ function batchProcessNames(referenceNames, comparisonNames, batchSize = 100) {
 The library is designed to handle edge cases gracefully but here are some tips for proper error handling:
 
 ```javascript
-const { match, NameNormalizer } = require('enhanced-name-matcher');
+const { match, NameNormalizer } = require('name-match');
 
 function safelyMatchNames(name1, name2) {
   try {
@@ -368,7 +368,7 @@ function safelyMatchNames(name1, name2) {
 ### Debugging
 
 ```javascript
-const { EnhancedNaturalMatcher, NameNormalizer } = require('enhanced-name-matcher');
+const { EnhancedNaturalMatcher, NameNormalizer } = require('name-match');
 
 function debugNameMatch(name1, name2) {
   // Parse names
