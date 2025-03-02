@@ -1,0 +1,19 @@
+# Tests
+test/
+*.test.js
+jest.config.js
+
+# Development files
+example.js
+.eslintrc.js
+.babelrc
+coverage/
+*.log
+
+# Git files
+.git
+.gitignore
+
+# CI/CD
+.travis.yml
+.github/
