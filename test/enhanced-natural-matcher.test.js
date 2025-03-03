@@ -18,7 +18,7 @@ const nonMatchingPairs = [
   ['Henry Ford', 'Howard Ford'],
   ['Robert Johnson', 'Robert Williams'],
   ['James Brown', 'James Rodriguez'],
-  ['Thomas Anderson', 'Andy Thomas']
+  ['Thomas Anderson', 'Thomas Cook']
 ];
 
 // Test groups - each group should match internally

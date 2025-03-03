@@ -1,6 +1,6 @@
 {
   "name": "name-match",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A robust name matching library combining multiple algorithms for optimal performance",
   "main": "index.js",
   "scripts": {

@@ -35,8 +35,11 @@ class EnhancedNaturalMatcher {
     if (name1 === name2) return 1;
     
     // Normalize names to handle comma format
-    const normalized1 = parseName(name1).normalized;
+    let normalized1 = parseName(name1).normalized;
     let normalized2 = parseName(name2).normalized;
+
+    // Check and re-order name1 if it's a reversed version of name2
+    normalized1 = reorderNameIfNeeded(normalized2, normalized1);
 
     // Check and re-order name2 if it's a reversed version of name1
     normalized2 = reorderNameIfNeeded(normalized1, normalized2);
