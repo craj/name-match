@@ -23,7 +23,7 @@ const testPairs = [
   ['Jessica Elizondo', 'Jessica William Elizondo'],
   ['Ander Herrera', 'Herrera Ander'],
   ['Chelsea M Solomon', 'Chelsea Mary-Elizabeth Solomon'],
-  ['John Smith', 'James Smith'], // Should not match
+  ['Jonathan Smith', 'James Smith'], // Should not match
   ['Robert Johnson', 'Robert Williams'] // Should not match
 ];
 

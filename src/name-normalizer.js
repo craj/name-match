@@ -70,6 +70,25 @@ function cleanName(name) {
 }
 
 /**
+ * Reorder name2 if its last part is the first part of name1
+ * @param {string} name1 - First name
+ * @param {string} name2 - Second name
+ * @returns {string} - Reordered name2 if needed
+ */
+function reorderNameIfNeeded(name1, name2) {
+  const parts1 = name1.split(' ');
+  const parts2 = name2.split(' ');
+
+  if (parts1.length > 1 && parts2.length > 1 && parts1[parts1.length - 1] === parts2[0]) {
+    // Move the first part of name2 to the end
+    const reorderedParts2 = parts2.slice(1).concat(parts2[0]);
+    return reorderedParts2.join(' ');
+  }
+
+  return name2;
+}
+
+/**
  * Parse a name into its components
  * 
  * @param {string} name - The name to parse
@@ -239,6 +258,7 @@ function normalizeNameOrder(name) {
 module.exports = {
   cleanName,
   parseName,
+  reorderNameIfNeeded,
   standardizeName,
   getNameVariations,
   normalizeNameOrder,
